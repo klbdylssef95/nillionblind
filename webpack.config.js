@@ -11,29 +11,31 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'), // Ensure this is set to 'dist'
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    headers: {
-      'Cross-Origin-Embedder-Policy': 'require-corp',
-      'Cross-Origin-Opener-Policy': 'same-origin',
-    },
-    hot: true,
-    client: {
-      overlay: false,
-    },
-    historyApiFallback: true, // enable browser routing
-    proxy: [
-      {
-        context: ['/nilchain-proxy'],
-        target: process.env.REACT_APP_NILLION_NILCHAIN_JSON_RPC,
-        pathRewrite: { '^/nilchain-proxy': '' },
-        changeOrigin: true,
-        secure: false,
-      },
-    ],
-  },
+   module.exports = {  
+  devServer: {  
+    static: {  
+      directory: path.join(__dirname, 'public'),  
+    },  
+    headers: {  
+      'Cross-Origin-Embedder-Policy': 'require-corp',  
+      'Cross-Origin-Opener-Policy': 'same-origin',  
+    },  
+    hot: true,  
+    client: {  
+      overlay: false,  
+    },  
+    historyApiFallback: true,  
+    proxy: [  
+      {  
+        context: ['/nilchain-proxy'],  
+        target: process.env.REACT_APP_NILLION_NILCHAIN_JSON_RPC,  
+        pathRewrite: { '^/nilchain-proxy': '' },  
+        changeOrigin: true,  
+        secure: false,  
+      },  
+    ],  
+  },  
+};
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
