@@ -11,7 +11,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'), // Ensure this is set to 'dist'
   },
-   module.exports = {  
+ 
   devServer: {  
     static: {  
       directory: path.join(__dirname, 'public'),  
@@ -35,7 +35,7 @@ module.exports = {
       },  
     ],  
   },  
-};
+ 
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
