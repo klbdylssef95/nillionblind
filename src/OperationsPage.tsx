@@ -142,7 +142,7 @@ export default function Main() {
               <h2>Store Program</h2>
               <StoreProgram
                 nillionClient={client}
-                defaultProgram="addition_simple"
+                defaultProgram="secret_addition"
               />
             </Typography>
           </Box>
